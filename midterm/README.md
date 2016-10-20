@@ -15,7 +15,7 @@ The end goal is to have the device connected to the internet so that it can be a
 
 ## Prototype
 
-![Prototype](https://raw.githubusercontent.com/JesusGuerrero/amber-iot/master/midterm/Hardware%20Diagram.png?token=AU8YJl1oOOmtVi-1PlbyZNo6oeHBWundks5YEYIbwA%3D%3D)
+![Prototype](https://raw.githubusercontent.com/JesusGuerrero/amber-iot/master/midterm/Hardware%20Diagram.png?token=AU8YJkobfhdgB4uOxTa47jN_DcWTxw1Pks5YEY5AwA%3D%3D)
 
 These are the major components necessary for this project. More sensors and/or outputs may be added at a later date.
 

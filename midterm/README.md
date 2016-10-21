@@ -15,9 +15,9 @@ The end goal is to have the device connected to the internet so that it can be a
 
 ## Prototype
 
-![Prototype](https://raw.githubusercontent.com/JesusGuerrero/amber-iot/master/midterm/Hardware%20Diagram.png?token=AU8YJkobfhdgB4uOxTa47jN_DcWTxw1Pks5YEY5AwA%3D%3D)
+![Prototype](https://raw.githubusercontent.com/JesusGuerrero/amber-iot/master/midterm/Hardware%20Diagram.png?token=AU8YJjMOi-qM8sJ4X3fhZmtCoupIUIS7ks5YEtZHwA%3D%3D)
 
-These are the major components necessary for this project. More sensors and/or outputs may be added at a later date.
+While the Pi is off, connect the camera module, touch screen display, motion sensor, and button according to the diagram above. Be careful when handling the camera and motion sensor, as they are sensitive to static electricity.
 
 ## Development
 ### Provisioning

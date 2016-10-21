@@ -9,15 +9,15 @@ A device that can turn any fridge into a smart fridge. It would sit on the count
 
 ## High Level System Design
 
-![High-Level System Design](https://raw.githubusercontent.com/JesusGuerrero/amber-iot/master/midterm/ConnectivityDiagram.png?token=AU8YJvk0Nre8dwD4mlnn245Hljx2VN38ks5YEYERwA%3D%3D)
+![High-Level System Design](https://raw.githubusercontent.com/JesusGuerrero/amber-iot/master/midterm/documentation/ConnectivityDiagram.png?token=AU8YJhT-LF9isDQcZ550elaoVoKvjbf-ks5YEvISwA%3D%3D)
 
 The end goal is to have the device connected to the internet so that it can be accessed from devices on different networks. However, for the purposes of early prototyping, we will be testing on a private local area network. Public internet access to be implemented at a later date.
 
 ## Prototype
 
-![Prototype](https://raw.githubusercontent.com/JesusGuerrero/amber-iot/master/midterm/Hardware%20Diagram.png?token=AU8YJjMOi-qM8sJ4X3fhZmtCoupIUIS7ks5YEtZHwA%3D%3D)
+![Prototype](https://raw.githubusercontent.com/JesusGuerrero/amber-iot/master/midterm/documentation/Hardware%20Diagram.png?token=AU8YJnSjlvDDPfExYn8pZwGG1YImvi6Iks5YEvIBwA%3D%3D)
 
-While the Pi is off, connect the camera module, touch screen display, motion sensor, and button according to the diagram above. Be careful when handling the camera and motion sensor, as they are sensitive to static electricity.
+While the Pi is off, connect the [camera module](https://www.youtube.com/watch?v=GImeVqHQzsE), touch screen display, motion sensor, and button according to the diagram above. Be careful when handling the camera and motion sensor, as they are sensitive to static electricity.
 
 ## Development
 ### Provisioning
@@ -46,6 +46,15 @@ The RaspberryPi is a mini-computer which needs to be provisioned. Here are the s
    * `vim -v`
    * `chromium-browser --version`
    
-### Integrating
+* In order to be able to use the camera, you will need to enable it. Run `sudo raspi-config` and use the arrow keys to navigate to the camera option and hit enter to enable it. After exiting this menu, you will need to restart your Pi.
+   
+### Testing
 
-*Work in progress*
+Run each of the following files individually using `node <filename>` to test that the individual components are working:
+* button.js
+* camera.js
+* motion.js
+
+One you have confirmed that the individual components are working, try running these files to trigger the camera with the button or the motion sensor:
+* button-camera.js
+* motion-camera.js

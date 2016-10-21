@@ -10,6 +10,12 @@ button.watch(function(err, value) {
   console.log('Button is ' + (value ? 'ON' : 'OFF'));
 
   camera.start();
+
+  camera.on('exit', function(){ 
+    console.log('stopped');
+    camera.stop();
+    camera.set('output', Date.now() + '.jpg');
+  });
 });
 
 process.on('SIGINT', function(){

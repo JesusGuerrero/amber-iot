@@ -1,13 +1,13 @@
-var Gpio = require('onoff').Gpio,	
-  button = new Gpio(17, 'in', 'both');	
+var gpio = require('onoff').Gpio,
+  motion = new gpio(21, 'in', 'both');
 
 var RaspiCam = require('raspicam');
 var camera = new RaspiCam({mode: 'photo', output: 'img/'+Date.now()+'.jpg'});
 
-button.setActiveLow( true );		
+motion.watch( function( err, val ) {
+  if( err ) { console.log('Motion Error'); return; }
 
-button.watch(function(err, value) {	
-  console.log('Button is ' + (value ? 'ON' : 'OFF'));
+  console.log('Motion in 21: ' + (val ? 'ACTIVE' : 'INACTIVE') + ' ' + new Date().toLocaleString() );
 
   camera.start();
 
@@ -16,13 +16,10 @@ button.watch(function(err, value) {
     camera.stop();
     camera.set('output', 'img/'+Date.now()+'.jpg');
   });
+
 });
 
 process.on('SIGINT', function(){
-  button.unexport();
+  motion.unexport();
   process.exit();
-});
-
-
-
-
+}); 

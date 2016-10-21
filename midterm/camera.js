@@ -1,12 +1,12 @@
 var RaspiCam = require('raspicam');
 
-var camera = new RaspiCam({mode: 'photo', output: Date.now()+'.jpg'});
+var camera = new RaspiCam({mode: 'photo', output: 'img/'+Date.now()+'.jpg'});
 
 camera.start();
 
 camera.on('exit', function(){ 
-  console.log('stopped');
+  console.log('image saved');
   camera.stop();
-  camera.set('output', Date.now() + '.jpg');
+  camera.set('output', 'img/'+Date.now()+'.jpg');
   camera.start(); 
 });

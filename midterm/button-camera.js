@@ -2,7 +2,7 @@ var Gpio = require('onoff').Gpio,
   button = new Gpio(17, 'in', 'both');	
 
 var RaspiCam = require('raspicam');
-var camera = new RaspiCam({mode: 'photo', output: 'img/'+Date.now()+'.jpg'});
+var camera = new RaspiCam({mode: 'photo', output: 'server/public/img/'+Date.now()+'.jpg'});
 
 button.setActiveLow( true );		
 

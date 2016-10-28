@@ -2,7 +2,7 @@ var gpio = require('onoff').Gpio,
   motion = new gpio(21, 'in', 'both');
 
 var RaspiCam = require('raspicam');
-var camera = new RaspiCam({mode: 'photo', output: 'img/'+Date.now()+'.jpg'});
+var camera = new RaspiCam({mode: 'photo', output: 'server/public/img/'+Date.now()+'.jpg'});
 
 motion.watch( function( err, val ) {
   if( err ) { console.log('Motion Error'); return; }

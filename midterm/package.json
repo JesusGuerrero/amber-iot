@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Amber Slovick",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -15,6 +15,12 @@
   "dependencies": {
     "onoff": "^1.1.1",
     "raspicam": "^0.2.13",
-    "socket.io": "^1.5.0"
+    "socket.io": "^1.5.0",
+    "boom": "2.10.1",
+    "hapi": "8.8.1",
+    "good": "6.3.0",
+    "good-console": "5.3.1",
+    "node-env-file": "0.1.8",
+    "ejs": "2.4.2"
   }
 }

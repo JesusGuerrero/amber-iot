@@ -3,13 +3,16 @@ var gpio = require('onoff').Gpio,
   powercontrol = new gpio(26, 'out'),
   powerstate = 0;
 
-button.setActiveLow( true );		
+button.setActiveLow( true );
+powercontrol.setActiveLow( true );		
 
 button.watch(function(err, value) {	
   console.log('Button is ' + (value ? 'ON' : 'OFF'));
 
   powercontrol.writeSync( powerstate );
-  powerstate = powerstate ? 0 : 1
+  powerstate = powerstate ? 0 : 1;
+
+  console.log('Screen is ' + (value ? 'ON' : 'OFF'));
 
   //powercontrol.writeSync(value);
 });

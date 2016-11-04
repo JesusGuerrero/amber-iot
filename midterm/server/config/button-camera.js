@@ -8,20 +8,23 @@ button.setActiveLow( true );
 
 button.watch(function(err, value) {	
   console.log('Button is ' + (value ? 'ON' : 'OFF'));
-  var camTime = Date.now();
-  camera.start();
-  camera.set('output', 'server/public/img/'+camTime+'.jpg');
 
-  camera.on('exit', function(){ 
-    
-    console.log('image saved as '+camTime+'.jpg');
-    camera.stop();
-    
-    if( io ) {
-      io.sockets.emit('event:camera', camTime);
-    }
+  if (value) {
+    var camTime = Date.now();
+    camera.start();
+    camera.set('output', 'server/public/img/'+camTime+'.jpg');
 
-  });
+    camera.on('exit', function(){ 
+      
+      console.log('image saved as '+camTime+'.jpg');
+      camera.stop();
+      
+      if( io ) {
+        io.sockets.emit('event:camera', camTime);
+      }
+  }
+    
+
 });
 
 process.on('SIGINT', function(){

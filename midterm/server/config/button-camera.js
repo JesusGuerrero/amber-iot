@@ -8,16 +8,17 @@ button.setActiveLow( true );
 
 button.watch(function(err, value) {	
   console.log('Button is ' + (value ? 'ON' : 'OFF'));
-
+  var camTime = Date.now();
   camera.start();
+  camera.set('output', 'server/public/img/'+camTime+'.jpg');
 
   camera.on('exit', function(){ 
-    console.log('image saved');
+    
+    console.log('image saved as '+camTime+'.jpg');
     camera.stop();
-    camera.set('output', 'img/'+Date.now()+'.jpg');
-
+    
     if( io ) {
-      io.sockets.emit('event:camera', value);
+      io.sockets.emit('event:camera', camTime);
     }
 
   });

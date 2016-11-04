@@ -1,5 +1,5 @@
 var gpio = require('onoff').Gpio,
-  button = new Gpio(17, 'in', 'both'),
+  button = new gpio(17, 'in', 'both'),
   powercontrol = new gpio(26, 'out');
 
 button.setActiveLow( true );		

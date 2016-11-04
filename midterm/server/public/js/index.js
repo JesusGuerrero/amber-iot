@@ -6,10 +6,10 @@ socket.on('event:hello', function(){
 
 angular.module('fridge-client', [])
   .controller('MainCtrl', ['$scope', function( $scope ) {
-    // $scope.camera = false;
     socket.on('event:camera', function( camTime ) {
       $scope.$apply( function() {
         $scope.camera = camTime;
+        console.log('camTime =' camTime);
       });
     });
   }]);

@@ -3,3 +3,16 @@ body {
     font-family: sans-serif;
     color: #454545;
 }
+
+.cam {
+  margin: 10px auto;
+  border-radius: 50%;
+  border: 2px solid #333;
+  background-color: blue;
+  width: 300px;
+  height: 300px;
+}
+
+.active {
+  background-color: green;
+}

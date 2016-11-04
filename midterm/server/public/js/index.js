@@ -9,7 +9,7 @@ angular.module('fridge-client', [])
     socket.on('event:camera', function( camTime ) {
       $scope.$apply( function() {
         $scope.camera = camTime;
-        console.log('camTime ='+camTime);
+        console.log('camTime = '+camTime);
       });
     });
   }]);

@@ -17,7 +17,7 @@ button.watch(function(err, value) {
     camera.set('output', 'img/'+Date.now()+'.jpg');
 
     if( io ) {
-      io.sockets.emit('event:camera', val);
+      io.sockets.emit('event:camera', value);
     }
 
   });

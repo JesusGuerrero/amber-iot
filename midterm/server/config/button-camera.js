@@ -22,6 +22,7 @@ button.watch(function(err, value) {
       if( io ) {
         io.sockets.emit('event:camera', camTime);
       }
+    });
   }
     
 

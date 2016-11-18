@@ -12,6 +12,7 @@ var config = require('./config/env')( process.env )
     , io = require('./config/sockets')( server );
 
 require('./config/button-camera')( io );
+require('./config/server-camera')( io );
 
 require('./routes/index')( server );
 

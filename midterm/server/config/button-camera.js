@@ -11,11 +11,10 @@ button.watch(function(err, value) {
 
   if (value) {
     var camTime = Date.now();
-    camera.start();
     camera.set('output', 'server/public/img/'+camTime+'.jpg');
+    camera.start();
 
     camera.on('exit', function(){ 
-      
       console.log('image saved as '+camTime+'.jpg');
       camera.stop();
       
@@ -25,8 +24,6 @@ button.watch(function(err, value) {
       }
     });
   }
-    
-
 });
 
 process.on('SIGINT', function(){

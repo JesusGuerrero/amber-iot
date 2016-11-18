@@ -12,4 +12,8 @@ angular.module('fridge-client', [])
         console.log('camTime = '+camTime);
       });
     });
-  }]);
+
+    $scope.capture = function() {
+    	socket.emit('event:button')
+    };
+}]);

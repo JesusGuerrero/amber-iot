@@ -4,7 +4,8 @@ var io        =   null,
 
 if( io ) {
 	socket.on('event:button', function() {
-
+		console.log('event:button');
+		
 	    var camTime = Date.now();
 	    camera.set('output', 'server/public/img/'+camTime+'.jpg');
 	    camera.start();

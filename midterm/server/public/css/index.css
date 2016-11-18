@@ -1,7 +1,7 @@
 body {
-    background: #C0C0C0;
+    background: #233442;
     font-family: sans-serif;
-    color: #454545;
+    color: white;
 }
 
 .cam {
@@ -11,4 +11,14 @@ body {
 img {
 	width: 640px;
 	height: 480px;
+	display: block;
+	margin: auto;
+}
+
+button {
+	background-color: #468ba6;
+	margin: auto;
+	margin-top: 10px;
+	height: 30px;
+	width: 100px;
 }

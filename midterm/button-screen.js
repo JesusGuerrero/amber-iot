@@ -7,9 +7,10 @@ button.setActiveLow( true );
 button.watch(function(err, value) {	
   console.log('Button is ' + (value ? 'ON' : 'OFF'));
 
-  usb.writeSync( value ? 1 : 0 );
-
-  console.log('Screen is ' + (value ? 'ON' : 'OFF'));
+  if (value) { 
+    usb.writeSync( value ? 1 : 0 );
+    console.log('Screen is ' + (value ? 'ON' : 'OFF'));
+  };
 });
 
 process.on('SIGINT', function(){

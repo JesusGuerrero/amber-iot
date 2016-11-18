@@ -1,13 +1,17 @@
 body {
     background: #233442;
     font-family: sans-serif;
-    color: white;
+    /*color: white;*/
 }
 
 .cam {
 	margin: auto;
 	background-image: url('/assets/img/default.png');
+	background-repeat: no-repeat;
 	border-radius: 5px;
+	width: 640px;
+	height: 480px;
+	display: block;
 }
 
 img {

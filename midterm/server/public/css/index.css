@@ -6,6 +6,8 @@ body {
 
 .cam {
 	margin: auto;
+	background-image: url('/assets/img/default.png');
+	border-radius: 5px;
 }
 
 img {
@@ -13,10 +15,12 @@ img {
 	height: 480px;
 	display: block;
 	margin: auto;
+	border-radius: 5px;
 }
 
 button {
 	background-color: #468ba6;
+	display: block;
 	margin: auto;
 	margin-top: 10px;
 	height: 30px;
@@ -24,4 +28,8 @@ button {
 	border: none;
 	color: white;
 	border-radius: 5px;
+}
+
+button:hover, button:focus {
+	background-color: #18b5d9;
 }

@@ -14,7 +14,9 @@ angular.module('fridge-client', [])
     });
 
     $scope.capture = function() {
-    	socket.emit('event:button');
-    	console.log('web button pressed');
+    	if( io ) {
+	    	socket.emit('event:button');
+	    	console.log('event:button');
+	    };
     };
 }]);

@@ -1,8 +1,14 @@
 'use strict';
 
-var io = null;
+var io = null, 
+	PromiseSettle = require('promise-settle');
 
-function main( server ){
+function escapeSpaces( path ) {
+  if( path ) { return path.replace(/ /g, '\\ '); }
+  else { return ''; }
+}
+
+function main( server, hardware ){
   io = require('socket.io').listen( server.listener );
 
   io.on('connection', function( socket ){
@@ -12,6 +18,15 @@ function main( server ){
 
     socket.on( 'disconnect', function(){
       console.log('goodbye socket...' + socket.id ); // Record the disconnection
+    });
+
+    socket.on( 'get:media:files', function( path ){
+      	path = process.env.MEDIA_DIRECTORY + escapeSpaces( path );
+		console.log( path, hardware );
+      	hardware.dir.getFiles( path )
+        .then( function(files){
+          socket.emit( 'media:files:list', files);
+        });
     });
   });
 

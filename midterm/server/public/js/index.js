@@ -19,4 +19,11 @@ angular.module('fridge-client', [])
 	    	console.log('event:button');
 	    };
     };
+
+    socket.on('media:files:list', function( files ) {
+      $scope.$apply( function() {
+        $scope.gallery = [files];
+        console.log(files);
+      });
+    });
 }]);

@@ -13,6 +13,10 @@
 
 		<button ng-click='capture()'>Take a Picture</button>
 
+		<div class='gallery'>
+			<img ng-repeat='image in gallery' ng-src='{{image}}'>
+		</div>
+
 		<script src="/assets/js/angular.min.js"></script>
 		<script src="/assets/js/socket.io.js"></script>
 		<script src="/assets/js/index.js"></script>

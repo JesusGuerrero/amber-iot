@@ -6,7 +6,7 @@ var gpio = require('onoff').Gpio,
 motion.watch( function( err, val ) {
   if( err ) { console.log('Motion Error'); return; };
 
-  if (val == 0 & usb.readSync() == 1) {
+  if (val == 0 && usb.readSync() == 1) {
   	countdown = setTimeout(function(){
   		usb.writeSync(0);
   	}, 2000);
